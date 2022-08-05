@@ -5,6 +5,13 @@ alias gs="git status"
 alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
+alias lint="yarn --cwd components/grow prettier:diff:fix"
+alias gs="git status"
+alias gc="git checkout"
+alias ga="git add"
+alias gco="git commit"
+alias gp="git pull"
+alias gpu="git push origin"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -13,3 +20,30 @@ alias path='echo $PATH | tr -s ":" "\n"'
 if [[ -f ~/.aliases.local ]]; then
   source ~/.aliases.local
 fi
+
+# Run the front end tests
+testfe() {
+    if [ -z "$1" ]
+    then
+        yarn --cwd components/grow run test
+    else
+        # Watch mode for single tests
+        yarn --cwd components/grow run test:watch $1
+    fi
+}
+
+# Run the backend tests
+testbe() {
+    if [ -z "$1" ]
+    then
+        bundle exec rspec {spec,components/*/spec}/**/*_spec.rb # note, the app must be running
+    else
+        bundle exec rspec $1
+    fi
+}
+
+# Build and run end to end tests
+teste2e() {
+    yarn --cwd components/grow build
+    bundle exec rspec e2e/*_spec.rb
+}
