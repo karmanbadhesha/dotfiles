@@ -1,17 +1,17 @@
 # Git
 alias gs="git status"
+alias gc="git checkout"
+alias ga="git add"
+alias gco="git commit"
+alias gp="git pull"
+alias gpu="git push origin"
 
 # Unix
 alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias lint="yarn --cwd components/grow prettier:diff:fix"
-alias gs="git status"
-alias gc="git checkout"
-alias ga="git add"
-alias gco="git commit"
-alias gp="git pull"
-alias gpu="git push origin"
+
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
