@@ -11,6 +11,7 @@ alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias lint="yarn --cwd components/grow prettier:diff:fix"
+alias rubylint="rubocop -a"
 
 
 # Pretty print the path
