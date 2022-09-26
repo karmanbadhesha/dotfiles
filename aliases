@@ -12,7 +12,8 @@ alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias lint="yarn --cwd components/grow prettier:diff:fix"
 alias rubylint="rubocop -a"
-
+alias build="yarn --cwd components/grow build"
+alias watch="yarn --cwd components/grow build:watch"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
