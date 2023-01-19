@@ -14,6 +14,7 @@ alias lint="yarn --cwd components/grow prettier:diff:fix"
 alias rubylint="rubocop -a"
 alias build="yarn --cwd components/grow build"
 alias watch="yarn --cwd components/grow build:watch"
+alias storybook="yarn --cwd components/grow storybook"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
